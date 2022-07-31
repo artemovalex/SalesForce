@@ -3,7 +3,7 @@
 <suite name="Parameterized Tests">
     <test name="Example parameters">
         <classes>
-            <class name="by.teachmeskills.BaseTest">
+            <class name="by.teachmeskills.CreateContactTest">
             </class>
         </classes>
     </test>
