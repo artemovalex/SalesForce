@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage open() {
-        driver.get("https://tms-e.my.salesforce.com/");
+        driver.get("https://tms22.my.salesforce.com/");
         return this;
     }
 

@@ -1,7 +1,9 @@
 package by.teachmeskills.pages;
 
-import by.teachmeskills.wrappers.DropDown;
-import by.teachmeskills.wrappers.Input;
+import by.teachmeskills.wrappers.DropDownNewAccount;
+import by.teachmeskills.wrappers.InputNewAccount;
+import by.teachmeskills.wrappers.InputWithSearchNewAccount;
+import by.teachmeskills.wrappers.TextBox;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,11 +19,14 @@ public class NewAccountModal extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public NewAccountModal fillInNewAccountModal(String accountName, String website, String phone, String type) {
-        new Input(driver, "Account Name").fillIn(accountName);
-        new Input(driver, "Website").fillIn(website);
-        new Input(driver, "Phone").fillIn(phone);
-        new DropDown(driver, "Type").select(type);
+    public NewAccountModal fillInNewAccountModal(String accountName, String website, String parentAccount, String phone, String type, String industry, String description) {
+        new InputWithSearchNewAccount(driver, "Account Name").fillIn(accountName);
+        new InputNewAccount(driver, "Website").fillIn(website);
+        new InputWithSearchNewAccount(driver, "Parent Account").fillIn(parentAccount);
+        new InputNewAccount(driver, "Phone").fillIn(phone);
+        new DropDownNewAccount(driver, "Type").select(type);
+        new DropDownNewAccount(driver, "Industry").select(industry);
+        new TextBox(driver, "Description").fillIn(description);
         return this;
     }
 
